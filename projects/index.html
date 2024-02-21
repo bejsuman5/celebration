@@ -1,0 +1,186 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let currentURL = window.location.href;
+console.log(currentURL);
+
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h1>The img element</h1>
+
+<img id="myImage" src="" alt="Girl in a jacket" width="500" height="600">
+
+<script>
+    // Get the current URL
+    let currentURL = window.location.href;
+
+    // Split the URL by '/'
+    let parts = currentURL.split('/');
+
+    // Get the folder name after blog.html
+    let folderName = parts[parts.length - 1];
+
+    // Set the image source based on the folder name
+    document.getElementById('myImage').src = folderName + '/images/img_girl.jpg';
+</script>
+
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h1>The img element</h1>
+
+<img id="demoImage" src="" alt="Girl in a jacket" width="500" height="600">
+
+<script>
+    // Get the folder name from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const folderName = urlParams.get('folder');
+
+    // Set the image source based on the folder name
+    const imgElement = document.getElementById('demoImage');
+    if (folderName === 'ram') {
+        imgElement.src = 'ram/images/demo.png';
+    } else if (folderName === 'sam') {
+        imgElement.src = 'sam/images/demo.png';
+    } else {
+        imgElement.src = 'default-image-path.jpg'; // Provide a default image path if folder name is neither 'ram' nor 'sam'
+    }
+</script>
+
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h1>The img element</h1>
+
+<img id="demoImage" src="" alt="Girl in a jacket" width="500" height="600">
+
+<script>
+    // Get the folder name from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    let folderName = urlParams.get('folder');
+
+    // Handle the case where folderName is 'null' and replace it with an empty string
+    if (folderName === 'null') {
+        folderName = '';
+    }
+
+    // Set the image source based on the folder name
+    const imgElement = document.getElementById('demoImage');
+    if (folderName === 'ram') {
+        imgElement.src = 'ram/images/demo.png';
+    } else if (folderName === 'sam') {
+        imgElement.src = 'sam/images/demo.png';
+    } else {
+        imgElement.src = 'default-image-path.jpg'; // Provide a default image path if folder name is neither 'ram' nor 'sam'
+    }
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The img element</h1>
+
+<img id="demoImage" src="" alt="Girl in a jacket" width="500" height="600">
+
+<script>
+    // Get the folder name from the URL query parameter, with a default value of 'default-folder'
+    const urlParams = new URLSearchParams(window.location.search);
+    const folderName = urlParams.get('folder') || 'default-folder';
+
+    // Set the image source based on the folder name
+    const imgElement = document.getElementById('demoImage');
+    imgElement.src = `${folderName}/images/demo.png`;
+</script>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Image Source</title>
+</head>
+<body>
+    <h1>The img element</h1>
+
+    <img id="dynamicImage" src="" alt="Image" width="500" height="600">
+
+    <script>
+        // Get the folder name from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const folderName = urlParams.get('folder');
+
+        // Set the image source based on the folder name
+        if (folderName === 'ram') {
+            document.getElementById('dynamicImage').src = 'ram/images/demo.png';
+        } else if (folderName === 'sam') {
+            document.getElementById('dynamicImage').src = 'sam/images/demo.png';
+        } else {
+            // Default image source if folder name is not provided or incorrect
+            document.getElementById('dynamicImage').src = 'default.jpg';
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h1>The img element</h1>
+
+<img id="image" src="" alt="Girl in a jacket" width="500" height="600">
+
+<script>
+    // Function to get URL query parameter value by name
+    function getQueryParameter(name) {
+        const urlParameter = new URLSearchParams(window.location.search);
+        return urlParameter.get(name);
+    }
+
+    // Get the folder name from the URL query parameter 'folder'
+    const folderName = getQueryParameter('folder');
+
+    // Update the image source based on the folder name
+    if (folderName === 'ram') {
+        document.getElementById('image').src = 'ram/images/demo.png';
+    } else if (folderName === 'sam') {
+        document.getElementById('image').src = 'sam/images/demo.png';
+    }
+</script>
+
+</body>
+</html> -->
+
+

@@ -1,0 +1,324 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* font-family: 'Courier New', Courier, monospace; */
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    /* font-family: Arial, Helvetica, sans-serif; */
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+/* default color start */
+.d-color-green {
+    color: #26d98e;
+}
+
+.d-color-blue {
+    color: #0059b2;
+}
+
+.d-color-black {
+    color: #000000;
+}
+
+.d-bgcolor-green {
+    background-color: #26d98e;
+}
+
+.d-bgcolor-blue {
+    /* background-color: rgba(0, 115, 230, 1); */
+    background-color: #0059b2;
+}
+
+.d-bgcolor-black {
+    background-color: #000000;
+}
+
+.d-border-color-green {
+    border: 1px solid #26d98e !important;
+}
+
+.d-border-color-blue {
+    border: 1px solid #0059b2 !important;
+}
+
+.d-border-color-black {
+    border: 1px solid #000000 !important;
+}
+
+/* default color end */
+
+/* todo Swiper Start */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next::after {
+    display: none;
+}
+
+.swiper-button-prev::after {
+    display: none;
+}
+
+/* todo Swiper end  */
+
+/* todo swiper-card-toggle-btn start */
+.swiper-card-toggle-btn {
+    display: inline-block;
+    position: absolute;
+    background-color: inherit;
+    width: 170px;
+    height: 60px;
+    right: 60px;
+    top: -40px;
+    padding: 8px 24px;
+    border-width: 1px 1px;
+    /* background-color: rgba(0, 115, 230, 1); */
+    background-color: #0059b2;
+    border-style: solid;
+    /* border-radius: 15px; */
+}
+
+/* todo swiper-card-toggle-btn end */
+
+
+/* todo social media area start  */
+.social-media-btn a:hover {
+    background-color: #26d98e;
+    color: black;
+    border-color: black;
+    transition-duration: 0.4s;
+}
+
+.social-media-btn a {
+    /* color: white; */
+    /* background-color: rgba(0, 128, 255, 1); */
+    /* background-color: rgba(0, 115, 230, 1); */
+    border: 1px solid #000000;
+    /*  */
+    /*  */
+    /*  */
+    /* background-color: rgba(0, 115, 230, 1); */
+    background-color: #0059b2;
+    color: white;
+
+}
+
+.social-media-btn-box {
+    position: fixed;
+    top: 30%;
+    left: -23px;
+    z-index: 1050;
+    transition: all 0.4s;
+}
+
+.social-media-btn-box:hover {
+    left: 0px;
+}
+
+.chat-box {
+    /* padding: 6px; */
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1050;
+}
+
+.chat-box a {
+    /* padding: 1px 7px 3px 7px; */
+    padding: 5px 10px 7px 11px;
+}
+
+/* todo social media area end  */
+
+/* navbar start */
+.navbar-btn {
+    /* border: 1px solid black; */
+    color: white;
+    transition: color 0.4s linear;
+    position: relative;
+    box-shadow: 0 10px 5px #00000080;
+}
+
+.navbar-btn:hover {
+    color: #26d98e;
+    /* background-color: #000000 !important; */
+}
+
+.navbar-btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -1;
+    transition: transform 0.7s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.7, 1.6, 0.2, 0.5);
+    transform: scaleX(0);
+}
+
+.navbar-btn:hover::before {
+    transform: scaleX(1);
+}
+
+.navbar-btn:active {
+    color: #26d98e;
+    background: black;
+}
+
+.navbar-btn:focus {
+    color: #26d98e !important;
+    background: black;
+
+}
+
+/* navbar end */
+
+/* navbar dropdown start */
+.navbar-dropdown-btn {
+    /* border: 1px solid black; */
+    color: white;
+    transition: color 0.4s linear;
+    position: relative;
+    box-shadow: 0 10px 5px #00000080;
+}
+
+.navbar-dropdown-btn:hover {
+    color: #26d98e;
+    background-color: transparent;
+}
+
+.navbar-dropdown-btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -1;
+    transition: transform 0.7s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.7, 1.6, 0.2, 0.5);
+    transform: scaleX(0);
+}
+
+.navbar-dropdown-btn:hover::before {
+    transform: scaleX(1);
+}
+
+.navbar-dropdown-btn:active {
+    color: #26d98e;
+    background: black;
+}
+
+.navbar-dropdown-btn:focus {
+    color: #26d98e !important;
+    background: black;
+
+}
+
+/* navbar dropdown end */
+
+/* carousel-btn start */
+.carousel-btn {
+    border: 1px solid black;
+}
+
+.carousel-btn:hover {
+    background-color: #26d98e;
+    transition-duration: 1s;
+}
+
+/* carousel-btn end */
+
+/* media queries start */
+/* Default font size */
+.responsive-p {
+    font-size: 16px;
+}
+
+.responsive-h {
+    font-size: 16px;
+}
+
+/* Custom font size for smaller screens */
+@media (max-width: 767px) {
+    .responsive-p {
+        font-size: 14px;
+    }
+
+    .responsive-h {
+        font-size: 20px;
+    }
+}
+
+/* Custom font size for medium screens */
+@media (min-width: 768px) and (max-width: 991px) {
+    .responsive-p {
+        font-size: 20px;
+    }
+
+    .responsive-h {
+        font-size: 56px;
+    }
+}
+
+/* Custom font size for large screens */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .responsive-p {
+        font-size: 24px;
+    }
+
+    .responsive-h {
+        font-size: 64px;
+    }
+}
+
+/* Custom font size for extra-large screens */
+@media (min-width: 1200px) {
+    .responsive-p {
+        font-size: 28px;
+    }
+
+    .responsive-h {
+        font-size: 72px;
+    }
+}
+
+/* media queries end */
+
+/* form start */
+/* .hidden-form-fild{
+    display: none;
+} */
+/* form end */

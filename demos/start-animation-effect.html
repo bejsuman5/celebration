@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shooting Stars</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(black, #071924);
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    animation: shooting-stars 5s linear infinite;
+}
+
+@keyframes shooting-stars {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) scale(0);
+    }
+}
+
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<script>
+  const NUM_STARS = 50;
+const container = document.querySelector('.stars');
+
+for (let i = 0; i < NUM_STARS; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.animationDuration = `${Math.random() * 3 + 1}s`; // Random duration between 1s and 4s
+    container.appendChild(star);
+}
+
+</script></body>
+</html>

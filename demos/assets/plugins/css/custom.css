@@ -1,0 +1,17 @@
+/** ** Message Area ***************************************** **/
+.bottom-message {
+    position: absolute;
+    animation-name: message-slide-up;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes message-slide-up {
+    from {
+        bottom: -100px;
+    }
+
+    to {
+        bottom: 0px;
+    }
+}
