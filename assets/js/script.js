@@ -1,3 +1,4 @@
+const giftBoxHeadingClass = document.querySelector('.gift-box-heading');
 const giftBoxCapClass = document.querySelector('.gift-box-cap');
 const giftBoxContainer = document.querySelector('.gift-box-container');
 const gifBoxBody = document.querySelector('.gift-box-body');
@@ -79,6 +80,7 @@ function resetText() {
 // *************************************************************************************
 giftBoxCapClass.addEventListener('click', () => {
     if (giftBoxCapClass.className === "gift-box-cap") {
+        giftBoxHeadingClass.classList.add('active');
         giftBoxCapClass.classList.add('active');
         giftBoxContainer.classList.add('active');
         gifBoxBody.classList.add('active');
@@ -90,6 +92,7 @@ giftBoxCapClass.addEventListener('click', () => {
         // typingAnimation.classList.add('animate');
     }
     else {
+        giftBoxHeadingClass.classList.remove('active');
         giftBoxCapClass.classList.remove('active');
         giftBoxContainer.classList.remove('active');
         gifBoxBody.classList.remove('active');
