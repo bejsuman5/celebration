@@ -1,0 +1,121 @@
+/* Custom font size for smaller screens */
+@media (max-width: 767px) {
+    .heart-container-top-left {
+        top: 30px;
+        right: 20px;
+    }
+
+    .heart-container-bottom-right {
+        bottom: 30px;
+        left: 20px;
+    }
+
+    .gift-box-content-top-left-title-container {
+        rotate: 0deg;
+        top: 40px;
+    }
+
+    .gift-box-content-bottom-right-title-container {
+        bottom: 40px;
+        right: 15px;
+    }
+
+    /* .color-title {
+        font-size: 10vw;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .typing-animation {
+        font-size: 1rem;
+    } */
+}
+
+/* Custom font size for medium screens */
+@media (min-width: 768px) and (max-width: 991px) {
+    .heart-container-top-left {
+        top: 30px;
+        right: 20px;
+    }
+
+    .heart-container-bottom-right {
+        bottom: 30px;
+        left: 20px;
+    }
+
+    .gift-box-content-top-left-title-container {
+        rotate: 0deg;
+    }
+
+    /* .color-title {
+        font-size: 10vw;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .typing-animation {
+        font-size: 1rem;
+    } */
+}
+
+/* Custom font size for large screens */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .heart-container-top-left {
+        top: 30px;
+        left: 20px;
+    }
+
+    .heart-container-bottom-right {
+        bottom: 30px;
+        right: 20px;
+    }
+
+    .gift-box-content-top-left-title-container {
+        rotate: -45deg;
+    }
+
+    /* .color-title {
+        font-size: 5vw;
+    }
+
+    .text {
+        width: 600px;
+    }
+
+    .typing-animation {
+        font-size: 1.5rem;
+    } */
+}
+
+/* Custom font size for extra-large screens */
+@media (min-width: 1200px) {
+    .heart-container-top-left {
+        top: 30px;
+        left: 20px;
+    }
+
+    .heart-container-bottom-right {
+        bottom: 30px;
+        right: 20px;
+    }
+
+    .gift-box-content-top-left-title-container {
+        rotate: -45deg;
+    }
+
+    /* .color-title {
+        font-size: 5vw;
+    }
+
+    .text {
+        width: 600px;
+    }
+
+    .typing-animation {
+        font-size: 1.5rem;
+    } */
+}

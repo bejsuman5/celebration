@@ -103,8 +103,8 @@ giftBoxCapClass.addEventListener('click', () => {
 
 
 
-    giftBoxContent.classList.toggle('hidden');
-    if (!giftBoxContent.classList.contains('hidden')) {
+    giftBoxContent.classList.toggle('gift-box-hidden-content');
+    if (!giftBoxContent.classList.contains('gift-box-hidden-content')) {
         typingTimeout = setTimeout(typeWriter, 2000);
     } else {
         resetText();
@@ -130,6 +130,85 @@ document.getElementById("giftBoxHeading").innerHTML = giftBoxHeading;
 
 
 
+// animation RED heart start
+// *************************************************************************************
+// *************************************************************************************
+document.querySelector('.heart-top-left').addEventListener('click', function () {
+    createHearts();
+});
+
+function createHearts() {
+    const heartContainer = document.createElement('div');
+    heartContainer.classList.add('heart-container');
+    for (let i = 0; i < 10; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('small-red-heart');
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.animationDuration = `${Math.random() * 2 + 1}s`;
+        heartContainer.appendChild(heart);
+    }
+    document.body.appendChild(heartContainer);
+    setTimeout(() => {
+        heartContainer.remove();
+    }, 5000);
+}
+
+
+
+
+
+
+// animation yellow heart start
+// *************************************************************************************
+// *************************************************************************************
+document.querySelector('.heart-bottom-right').addEventListener('click', function () {
+    createHearts2();
+});
+
+function createHearts2() {
+    const heartContainer = document.createElement('div');
+    heartContainer.classList.add('heart-container');
+    for (let i = 0; i < 10; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('small-yellow-heart');
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.animationDuration = `${Math.random() * 2 + 1}s`;
+        heartContainer.appendChild(heart);
+    }
+    document.body.appendChild(heartContainer);
+    setTimeout(() => {
+        heartContainer.remove();
+    }, 5000);
+}
+
+
+
+
+
+
+// shooting-stars start
+// *************************************************************************************
+// *************************************************************************************
+const NUM_STARS = 50;
+const container = document.querySelector('.stars');
+
+for (let i = 0; i < NUM_STARS; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.animationDuration = `${Math.random() * 3 + 1}s`; // Random duration between 1s and 4s
+    container.appendChild(star);
+}
+
+
+
+
+
+
+// gift-box 
+// *************************************************************************************
+// *************************************************************************************
 // gift-box 
 // *************************************************************************************
 // *************************************************************************************
