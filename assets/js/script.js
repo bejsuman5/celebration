@@ -61,7 +61,8 @@ function typeWriter() {
         typingTimeout = setTimeout(typeWriter, 120); // Adjust the typing speed here (milliseconds)
     } else {
         // setTimeout(countdown, 18000);
-        setTimeout(countdown);
+        // setTimeout(countdown);
+        countdown();
     }
 }
 function resetText() {

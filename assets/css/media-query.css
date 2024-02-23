@@ -20,17 +20,17 @@
         right: 15px;
     }
 
-    /* .color-title {
+    .gift-box-content-title {
         font-size: 10vw;
     }
 
-    .text {
+    /* .text {
         width: 100%;
-    }
-
-    .typing-animation {
-        font-size: 1rem;
     } */
+
+    .gift-box-text-typing-animation {
+        font-size: 1rem;
+    }
 }
 
 /* Custom font size for medium screens */
@@ -49,17 +49,17 @@
         rotate: 0deg;
     }
 
-    /* .color-title {
+    .gift-box-content-title {
         font-size: 10vw;
     }
 
-    .text {
+    /* .text {
         width: 100%;
-    }
-
-    .typing-animation {
-        font-size: 1rem;
     } */
+
+    .gift-box-text-typing-animation {
+        font-size: 1rem;
+    }
 }
 
 /* Custom font size for large screens */
@@ -78,17 +78,17 @@
         rotate: -45deg;
     }
 
-    /* .color-title {
+    .gift-box-content-title {
         font-size: 5vw;
     }
 
-    .text {
+    /* .text {
         width: 600px;
-    }
-
-    .typing-animation {
-        font-size: 1.5rem;
     } */
+
+    .gift-box-text-typing-animation {
+        font-size: 1.5rem;
+    }
 }
 
 /* Custom font size for extra-large screens */
@@ -107,15 +107,15 @@
         rotate: -45deg;
     }
 
-    /* .color-title {
+    .gift-box-content-title {
         font-size: 5vw;
     }
 
-    .text {
+    /* .text {
         width: 600px;
-    }
-
-    .typing-animation {
-        font-size: 1.5rem;
     } */
+
+    .gift-box-text-typing-animation {
+        font-size: 1.5rem;
+    }
 }
