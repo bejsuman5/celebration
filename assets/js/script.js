@@ -8,7 +8,7 @@ const giftBoxTextBody = document.querySelector('.gift-box-text-body');
 const giftBoxContent = document.getElementById('giftBoxContent');
 const giftBoxTextTypingAnimation = document.getElementById('giftBoxTextTypingAnimation');
 const giftBoxCapId = document.getElementById('giftBoxCap');
-const giftBoxText = "অভিমানের মেঘ উড়িয়ে দাও অনেক দূরে,\nমন খারাপের দিনটা তোমার না আসুক ফিরে,\nদুঃখ গুলো দাউ উড়িয়ে ওই আকাশের নীচে,\nঅসীম সুখ বয়ে আসুক তোমার জীবন ভোরে,\nশুভ জন্মদিন প্রিয় ।।";
+// const giftBoxText = "অভিমানের মেঘ উড়িয়ে দাও অনেক দূরে,\nমন খারাপের দিনটা তোমার না আসুক ফিরে,\nদুঃখ গুলো দাউ উড়িয়ে ওই আকাশের নীচে,\nঅসীম সুখ বয়ে আসুক তোমার জীবন ভোরে,\nশুভ জন্মদিন প্রিয় ।।";
 const giftBoxCountdown = document.getElementById('giftBoxCountdown');
 
 
@@ -122,10 +122,10 @@ giftBoxCapClass.addEventListener('click', () => {
 // *************************************************************************************
 // *************************************************************************************
 // const giftBoxTextTypingAnimation="hello";
-const giftBoxHeading = "Open The Surprise Box !";
+// const giftBoxHeading = "Open The Surprise Box !";
 
 // document.getElementById("giftBoxTextTypingAnimation").innerHTML = giftBoxTextTypingAnimation;
-document.getElementById("giftBoxHeading").innerHTML = giftBoxHeading;
+// document.getElementById("giftBoxHeading").innerHTML = giftBoxHeading;
 
 
 
