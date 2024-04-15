@@ -62,72 +62,18 @@ body {
             border: 6px solid black;
             border-radius: 10px;
         }
-
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-
-
-        .gift-box-content-title {
-            display: flex;
-            justify-content: center;
-            color: transparent;
-            font-size: 4vw;
-            font-family: monospace;
-            font-family: "Bad Script", cursive;
-        }
-
-        .gift-box-content-title-span {
-            animation: ColorAnimate 3s linear infinite;
-            animation-delay: calc(0.1s * var(--i));
-        }
-
-        @keyframes ColorAnimate {
-            0% {
-                color: #fff;
-                filter: blur(2px) hue-rotate(0deg);
-                text-shadow: 0 0 10px dodgerblue,
-                    0 0 20px dodgerblue,
-                    0 0 40px dodgerblue,
-                    0 0 80px dodgerblue,
-                    0 0 120px dodgerblue,
-                    0 0 200px dodgerblue,
-                    0 0 300px dodgerblue,
-                    0 0 400px dodgerblue;
-            }
-
-            30%,
-            70% {
-                color: #fff;
-                filter: blur(2px) hue-rotate(360deg);
-                text-shadow: 0 0 10px dodgerblue,
-                    0 0 20px dodgerblue,
-                    0 0 40px dodgerblue,
-                    0 0 80px dodgerblue,
-                    0 0 120px dodgerblue,
-                    0 0 200px dodgerblue,
-                    0 0 300px dodgerblue,
-                    0 0 400px dodgerblue;
-            }
-
-            100% {
-                color: transparent;
-                box-shadow: none;
-                filter: blur(2px) hue-rotate(0deg);
-            }
-        }
     </style>
 </head>
 
 <body>
 
-    <div class="main-section my-5 py-2 mx-3 mx-md-5 px-0 px-md-5 bg-body rounded-4 
+    <div class="main-section my-5 py-5 mx-3 mx-md-5 px-0 px-md-5 bg-body rounded-4 
         position-relative">
-
+        <div style="font-family: 'Courier New', Courier, monospace;color: black;">
+            <h1 class="d-flex justify-content-center">Happy Birthday</h1>
+            <h2 class="d-flex justify-content-center"><i class="bi bi-cake2"></i></h2>
+            <h1 class="d-flex justify-content-center">My Dear Friend </i></h1>
+        </div>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide image-section">
@@ -161,50 +107,6 @@ body {
             <div class="swiper-pagination"></div>
         </div>
     </div>
-
-    <div class="gift-box-content-top-left-title-container">
-        <h2 class="gift-box-content-title">
-            <span class="gift-box-content-title-span" style="--i:1;">H</span>
-            <span class="gift-box-content-title-span" style="--i:2;">A</span>
-            <span class="gift-box-content-title-span" style="--i:3;">P</span>
-            <span class="gift-box-content-title-span" style="--i:4;">P</span>
-            <span class="gift-box-content-title-span" style="--i:5;">Y</span>
-            <span class="gift-box-content-title-span" style="--i:6;margin-left: 3vw;">B</span>
-            <span class="gift-box-content-title-span" style="--i:7;">I</span>
-            <span class="gift-box-content-title-span" style="--i:8;">R</span>
-            <span class="gift-box-content-title-span" style="--i:9;">T</span>
-            <span class="gift-box-content-title-span" style="--i:10;">H</span>
-            <span class="gift-box-content-title-span" style="--i:11;">D</span>
-            <span class="gift-box-content-title-span" style="--i:12;">A</span>
-            <span class="gift-box-content-title-span" style="--i:13;">Y</span>
-
-        </h2>
-        <h2 class="gift-box-content-title">
-            <span class="gift-box-content-title-span" style="--i:14;">
-                <i class="bi bi-cake2"></i>
-            </span>
-        </h2>
-        <h2 class="gift-box-content-title">
-            <span class="gift-box-content-title-span" style="--i:15;">M</span>
-            <span class="gift-box-content-title-span" style="--i:16;">Y</span>
-            <span class="gift-box-content-title-span" style="--i:17;margin-left: 2vw;">D</span>
-            <span class="gift-box-content-title-span" style="--i:18;">E</span>
-            <span class="gift-box-content-title-span" style="--i:19;">A</span>
-            <span class="gift-box-content-title-span" style="--i:20;">R</span>
-            <span class="gift-box-content-title-span" style="--i:21;margin-left: 2vw;">F</span>
-            <span class="gift-box-content-title-span" style="--i:22;">R</span>
-            <span class="gift-box-content-title-span" style="--i:23;">I</span>
-            <span class="gift-box-content-title-span" style="--i:24;">E</span>
-            <span class="gift-box-content-title-span" style="--i:25;">N</span>
-            <span class="gift-box-content-title-span" style="--i:26;">D</span>
-            <span class="gift-box-content-title-span" style="--i:27;">!</span>
-        </h2>
-    </div>
-
-
-
-
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
