@@ -1,25 +1,14 @@
-/* all elements style */
-/* ******************************************************************************* */
-/* ******************************************************************************* */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* body elements style */
-/* ******************************************************************************* */
-/* ******************************************************************************* */
 body {
-    /* font-family: "Josefin Sans", sans-serif; */
-    /* font-family: "Tiro Bangla", serif; */
     font-family: "Bad Script", cursive;
     overflow: hidden;
 }
 
-/* Main Heading */
-/* ******************************************************************************* */
-/* ******************************************************************************* */
 .gift-box-heading{
     color: dodgerblue;
     position: absolute;
@@ -33,13 +22,6 @@ body {
     top: 0;
 }
 
-
-
-
-
-/* gift box */
-/* ******************************************************************************* */
-/* ******************************************************************************* */
 .gift-box-section {
     margin: 0;
     display: flex;
@@ -47,7 +29,6 @@ body {
     justify-content: center;
     overflow: hidden;
     height: max-content;
-    /* background-color: rgb(55, 53, 53); */
 }
 
 .gift-box-container {
@@ -159,7 +140,6 @@ body {
 .gift-box-text-body {
     z-index: -1;
     top: 0;
-    /* width: 600px; */
     width: max-content;
     border-radius: 15px;
     padding: 0.5rem;
@@ -188,7 +168,6 @@ body {
     font-size: 1.5rem;
     white-space: pre-line;
     font-family: "Tiro Bangla", serif;
-    /* Preserve newline characters */
 }
 
 .blink-span {
@@ -284,166 +263,6 @@ body {
         opacity: 1;
     }
 }
-
-
-
-
-
-
-/* gift box content start */
-/* ******************************************************************************* */
-/* ******************************************************************************* */
-.gift-box-hidden-content {
-    display: none;
-}
-
-.gift-box-content-container {
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    /* transition-delay: 1s; */
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 2.5s ease-in-out;
-}
-
-.gift-box-content-body {
-    display: flex;
-    overflow: hidden;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    border: 5px solid rgb(30, 144, 255);
-    background-color: black;
-}
-
-.image-box {
-    z-index: 5;
-    width: 200px;
-    height: 200px;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: ImageAnimate 30s linear infinite;
-}
-
-.image-box .title {
-    top: -200px;
-    color: magenta;
-    width: max-content;
-    position: absolute;
-}
-
-.image-box span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-origin: center;
-    transform-style: preserve-3d;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
-    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, hsla(0, 0%, 0%, 0.7));
-}
-
-.image-box span img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* width: 200px; */
-    /* height: auto; */
-    object-fit: cover;
-    border: 1px solid black;
-    border-radius: 25px;
-}
-
-@keyframes ImageAnimate {
-    0% {
-        transform: perspective(1000px) rotateY(0deg);
-    }
-
-    100% {
-        transform: perspective(1000px) rotateY(360deg);
-    }
-}
-
-
-
-
-
-
-/* gift-box-content-title-container start */
-/* ******************************************************************************* */
-/* ******************************************************************************* */
-.gift-box-content-top-left-title-container {
-    position: absolute;
-    top: 80px;
-    left: 20px;
-    rotate: -45deg;
-}
-
-.gift-box-content-bottom-right-title-container {
-    position: absolute;
-    bottom: 80px;
-    right: 20px;
-    rotate: -45deg;
-}
-
-.gift-box-content-title {
-    display: flex;
-    /* justify-content: center; */
-    color: transparent;
-    font-size: 5vw;
-    font-family: monospace;
-    font-family: "Bad Script", cursive;
-}
-
-.gift-box-content-title-span {
-    animation: ColorAnimate 3s linear infinite;
-    animation-delay: calc(0.1s * var(--i));
-}
-
-@keyframes ColorAnimate {
-    0% {
-        color: #fff;
-        filter: blur(2px) hue-rotate(0deg);
-        text-shadow: 0 0 10px dodgerblue,
-            0 0 20px dodgerblue,
-            0 0 40px dodgerblue,
-            0 0 80px dodgerblue,
-            0 0 120px dodgerblue,
-            0 0 200px dodgerblue,
-            0 0 300px dodgerblue,
-            0 0 400px dodgerblue;
-    }
-
-    30%,
-    70% {
-        color: #fff;
-        filter: blur(2px) hue-rotate(360deg);
-        text-shadow: 0 0 10px dodgerblue,
-            0 0 20px dodgerblue,
-            0 0 40px dodgerblue,
-            0 0 80px dodgerblue,
-            0 0 120px dodgerblue,
-            0 0 200px dodgerblue,
-            0 0 300px dodgerblue,
-            0 0 400px dodgerblue;
-    }
-
-    100% {
-        color: transparent;
-        box-shadow: none;
-        filter: blur(2px) hue-rotate(0deg);
-    }
-}
-
-
-
-
 
 .gift-btn.active{
     display: none;
