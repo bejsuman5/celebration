@@ -11,69 +11,7 @@ const giftBoxTextTypingAnimation = document.getElementById('giftBoxTextTypingAni
 const giftBoxCapId = document.getElementById('giftBoxCap');
 // const giftBoxText = "অভিমানের মেঘ উড়িয়ে দাও অনেক দূরে,\nমন খারাপের দিনটা তোমার না আসুক ফিরে,\nদুঃখ গুলো দাউ উড়িয়ে ওই আকাশের নীচে,\nঅসীম সুখ বয়ে আসুক তোমার জীবন ভোরে,\nশুভ জন্মদিন প্রিয় ।।";
 const giftBoxCountdown = document.getElementById('giftBoxCountdown');
-
-
-
-
-
-// countdown function
-// *************************************************************************************
-// *************************************************************************************
-let count = 5;
-let intervalId;
-
-function countdown() {
-    intervalId = setInterval(() => {
-        giftBoxCountdown.textContent = count;
-        count--;
-
-        if (count < 0) {
-            clearInterval(intervalId);
-            // giftBoxCountdown.textContent = 'Just for you...!';
-            giftBoxCountdown.textContent = '0';
-            count = 5; // Reset the count for future use
-            setTimeout(() => {
-                giftBoxContent.style.transform = 'translate(-50%, -50%) scale(1)';
-            }, 100);
-        }
-    }, 1000); // Update every second (1000 ms)
-}
-function resetCountdown() {
-    clearInterval(intervalId);
-    count = 5;
-    giftBoxCountdown.textContent = "";
-}
-
-
-
-
-
-
-// typewriter function
-// *************************************************************************************
-// *************************************************************************************
-let index = 0;
-let typingTimeout;
-
-function typeWriter() {
-    if (index < giftBoxText.length) {
-        giftBoxTextTypingAnimation.textContent += giftBoxText.charAt(index);
-        index++;
-        typingTimeout = setTimeout(typeWriter, 120); // Adjust the typing speed here (milliseconds)
-    } else {
-        // setTimeout(countdown, 18000);
-        // setTimeout(countdown);
-        countdown();
-    }
-}
-function resetText() {
-    clearTimeout(typingTimeout);
-    giftBoxTextTypingAnimation.textContent = '';
-    index = 0;
-}
-
-
-
+const giftBtn = document.querySelector('.gift-btn');
 
 // gift-box click function
 // *************************************************************************************
@@ -87,9 +25,11 @@ giftBoxCapClass.addEventListener('click', () => {
         giftBoxShadow.classList.add('active');
         giftBoxTextBody.classList.add('active');
         giftBoxTextBody.classList.remove('active2');
+        giftBtn.classList.add('active');
         // click2.classList.add('active');
         // click.classList.add('hide');
         // typingAnimation.classList.add('animate');
+        typingTimeout = setTimeout(typeWriter, 2000);
     }
     else {
         giftBoxHeadingClass.classList.remove('active');
@@ -99,115 +39,34 @@ giftBoxCapClass.addEventListener('click', () => {
         giftBoxShadow.classList.remove('active');
         giftBoxTextBody.classList.remove('active');
         giftBoxTextBody.classList.add('active2');
+        // giftBtn.classList.remove('active');
         // click2.classList.remove('active');
         // click.classList.remove('hide');
         // typingAnimation.classList.remove('animate');
-    }
-
-
-
-
-    giftBoxContent.classList.toggle('gift-box-hidden-content');
-    if (!giftBoxContent.classList.contains('gift-box-hidden-content')) {
-        typingTimeout = setTimeout(typeWriter, 2000);
-    } else {
         resetText();
-        resetCountdown();
-        giftBoxContent.style.transform = 'translate(-50%, -50%) scale(0)';
     }
 });
 
-
-
-
-
-// gift-box 
+// typewriter function
 // *************************************************************************************
 // *************************************************************************************
-// const giftBoxTextTypingAnimation="hello";
-// const giftBoxHeading = "Open The Surprise Box !";
+let index = 0;
+let typingTimeout;
 
-// document.getElementById("giftBoxTextTypingAnimation").innerHTML = giftBoxTextTypingAnimation;
-// document.getElementById("giftBoxHeading").innerHTML = giftBoxHeading;
-
-
-
-
-
-// animation RED heart start
-// *************************************************************************************
-// *************************************************************************************
-document.querySelector('.heart-top-left').addEventListener('click', function () {
-    createHearts();
-});
-
-function createHearts() {
-    const heartContainer = document.createElement('div');
-    heartContainer.classList.add('heart-container');
-    for (let i = 0; i < 10; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('small-red-heart');
-        heart.style.left = `${Math.random() * 100}vw`;
-        heart.style.animationDuration = `${Math.random() * 2 + 1}s`;
-        heartContainer.appendChild(heart);
+function typeWriter() {
+    if (index < giftBoxText.length) {
+        giftBoxTextTypingAnimation.textContent += giftBoxText.charAt(index);
+        index++;
+        typingTimeout = setTimeout(typeWriter, 120); // Adjust the typing speed here (milliseconds)
+    } else {
+        giftBtn.classList.remove('active');
     }
-    document.body.appendChild(heartContainer);
-    setTimeout(() => {
-        heartContainer.remove();
-    }, 5000);
 }
-
-
-
-
-
-
-// animation yellow heart start
-// *************************************************************************************
-// *************************************************************************************
-document.querySelector('.heart-bottom-right').addEventListener('click', function () {
-    createHearts2();
-});
-
-function createHearts2() {
-    const heartContainer = document.createElement('div');
-    heartContainer.classList.add('heart-container');
-    for (let i = 0; i < 10; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('small-yellow-heart');
-        heart.style.left = `${Math.random() * 100}vw`;
-        heart.style.animationDuration = `${Math.random() * 2 + 1}s`;
-        heartContainer.appendChild(heart);
-    }
-    document.body.appendChild(heartContainer);
-    setTimeout(() => {
-        heartContainer.remove();
-    }, 5000);
+function resetText() {
+    clearTimeout(typingTimeout);
+    giftBoxTextTypingAnimation.textContent = '';
+    index = 0;
 }
-
-
-
-
-
-
-// shooting-stars start
-// *************************************************************************************
-// *************************************************************************************
-const NUM_STARS = 50;
-const container = document.querySelector('.stars');
-
-for (let i = 0; i < NUM_STARS; i++) {
-    const star = document.createElement('div');
-    star.classList.add('star');
-    star.style.left = `${Math.random() * 100}%`;
-    star.style.top = `${Math.random() * 100}%`;
-    star.style.animationDuration = `${Math.random() * 3 + 1}s`; // Random duration between 1s and 4s
-    container.appendChild(star);
-}
-
-
-
-
 
 
 // change the image depended by the user name
@@ -242,13 +101,3 @@ imgElement7.src = `assets/plugins/${birthday_person}/images/image-7.jpg`;
 
 const imgElement8 = document.getElementById('image-8');
 imgElement8.src = `assets/plugins/${birthday_person}/images/image-8.jpg`;
-
-
-
-
-
-// gift-box 
-// *************************************************************************************
-// *************************************************************************************
-
-
