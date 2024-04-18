@@ -19,7 +19,7 @@ body {
 
 .gift-box-heading.active{
     color: dodgerblue;
-    top: 0;
+    top: -80px;
 }
 
 .gift-box-section {
