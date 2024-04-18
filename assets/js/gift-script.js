@@ -24,8 +24,8 @@ imgElement5.src = `assets/plugins/${birthday_person}/images/image-5.jpg`;
 const imgElement6 = document.getElementById('image-6');
 imgElement6.src = `assets/plugins/${birthday_person}/images/image-6.jpg`;
 
-const imgElement7 = document.getElementById('image-7');
-imgElement7.src = `assets/plugins/${birthday_person}/images/image-7.jpg`;
+// const imgElement7 = document.getElementById('image-7');
+// imgElement7.src = `assets/plugins/${birthday_person}/images/image-7.jpg`;
 
-const imgElement8 = document.getElementById('image-8');
-imgElement8.src = `assets/plugins/${birthday_person}/images/image-8.jpg`;
+// const imgElement8 = document.getElementById('image-8');
+// imgElement8.src = `assets/plugins/${birthday_person}/images/image-8.jpg`;
