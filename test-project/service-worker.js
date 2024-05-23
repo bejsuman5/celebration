@@ -1,23 +1,23 @@
-self.addEventListener('push', function(event) {
-    let data = {};
-    if (event.data) {
-        data = event.data.json();
-    }
+// self.addEventListener('push', function(event) {
+//     let data = {};
+//     if (event.data) {
+//         data = event.data.json();
+//     }
 
-    const options = {
-        body: data.body,
-        icon: data.icon,
-        badge: 'assets/images/badge.png', // optional
-    };
+//     const options = {
+//         body: data.body,
+//         icon: data.icon,
+//         badge: 'assets/images/badge.png', // optional
+//     };
 
-    event.waitUntil(
-        self.registration.showNotification(data.title, options)
-    );
-});
+//     event.waitUntil(
+//         self.registration.showNotification(data.title, options)
+//     );
+// });
 
-self.addEventListener('notificationclick', function(event) {
-    event.notification.close();
-    event.waitUntil(
-        clients.openWindow('/')
-    );
-});
+// self.addEventListener('notificationclick', function(event) {
+//     event.notification.close();
+//     event.waitUntil(
+//         clients.openWindow('/')
+//     );
+// });
