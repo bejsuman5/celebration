@@ -138,7 +138,7 @@
             document.getElementById('content').style.display = 'block';
 
             
-            // setTimeout(() => {
+            setTimeout(() => {
                 Notification.requestPermission().then(perm => {
                     if (perm === "granted") {
                         const notifications = [
@@ -164,7 +164,7 @@
                         });
                     }
                 });
-            // }, 30000); // 30 seconds delay
+            }, 8000); // 30 seconds delay
         });
 
         // swiper script
