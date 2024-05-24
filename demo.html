@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+
+    <link rel="shortcut icon" href="assets/images/logos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        body {
+            background-color: black;
+            overflow: hidden;
+            /* Prevent scrolling while loading */
+        }
+
+        .main-section {
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.9);
+            border: 2px solid #0ff;
+        }
+
+        .image-section {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            border: 6px solid black;
+            border-radius: 10px;
+        }
+
+        #loading-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            /* Background color of the loading screen */
+            color: #000;
+            /* Text color of the loading screen */
+            font-size: 2em;
+            z-index: 9999;
+            /* Ensure the loading screen is on top */
+            transition: opacity 1s ease-in-out, visibility 1s;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #main-content {
+            opacity: 0;
+            /* Initially hidden */
+            visibility: hidden;
+            transition: opacity 1s ease-in-out, visibility 1s;
+        }
+
+        .box {
+            width: 75%;
+            height: auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* swiper */
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+        }
+
+        /* swiper */
+    </style>
+</head>
+
+<body>
+
+    <div class="" id="loading-screen">
+        <div class="box p-5">
+            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
+                aria-valuemin="0" aria-valuemax="100" style="height: 2.5vh;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
+            </div>
+            <h3 class="text-center m-0 mt-3">Loading...</h3>
+        </div>
+    </div>
+
+    <div class="main-section my-5 py-5 mx-3 mx-md-5 px-0 px-md-5 bg-body rounded-4 
+        position-relative" id="main-content">
+        <div style="font-family: 'Courier New', Courier, monospace;color: black;">
+            <h1 class="d-flex justify-content-center">Happy Birthday</h1>
+            <h2 class="d-flex justify-content-center"><i class="bi bi-cake2"></i></h2>
+            <h1 class="d-flex justify-content-center">My Dear Friend </i></h1>
+        </div>
+
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide image-section">
+                    <img id="pic1" src="" onerror="this.src='assets/plugins/default/images/pic1.jpg';" />
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="pic2" src="" onerror="this.src='assets/plugins/default/images/pic2.jpg';" />
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="pic3" src="" onerror="this.src='assets/plugins/default/images/pic3.jpg';" />
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="pic4" src="" onerror="this.src='assets/plugins/default/images/pic4.jpg';" />
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="pic5" src="" onerror="this.src='assets/plugins/default/images/pic5.jpg';" />
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="pic6" src="" onerror="this.src='assets/plugins/default/images/pic6.jpg';" />
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="pic7" src="" onerror="this.src='assets/plugins/default/images/pic7.jpg';" />
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="pic8" src="" onerror="this.src='assets/plugins/default/images/pic8.jpg';" />
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="pic9" src="" onerror="this.src='assets/plugins/default/images/pic9.jpg';" />
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- swiper -->
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- <script src="assets/js/gift-script.js"></script> -->
+
+    <script>
+
+        window.addEventListener('load', function () {
+            // Hide the loading screen
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.visibility = 'hidden';
+
+            // Show the main content
+            const mainContent = document.getElementById('main-content');
+            mainContent.style.opacity = '1';
+            mainContent.style.visibility = 'visible';
+
+            // Allow scrolling after loading
+            document.body.style.overflow = 'auto';
+
+
+
+        });
+
+
+
+        // swiper
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            loop: true, // Loop through the images
+            autoplay: {
+                delay: 2000, // Delay between slides in milliseconds
+                disableOnInteraction: false, // Enable/disable autoplay on slide interaction
+            },
+        });
+    </script>
+</body>
+
+</html>
