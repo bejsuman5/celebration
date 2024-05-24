@@ -128,8 +128,8 @@
                     });
             }
 
-            if (!localStorage.getItem('notificationsShown')) {
-                setTimeout(() => {
+            setTimeout(() => {
+                if (!localStorage.getItem('notificationsShown')) {
                     Notification.requestPermission().then(perm => {
                         if (perm === "granted") {
                             const notifications = [
@@ -153,13 +153,15 @@
                                             icon: notification.icon
                                         });
                                     });
-                                }, index * 5000); // 5 second gap
+                                }, index * 1000); // 5 second gap
                             });
+                            // Set a flag in localStorage to indicate that notifications have been shown
+                        localStorage.setItem('notificationsShown', 'true');
                         }
                     });
-                }, 2000); // 30 seconds delay
-                // ***************************************************
-            }
+                }
+            }, 2000); // 30 seconds delay
+            // ***************************************************
         });
 
 
