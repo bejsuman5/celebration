@@ -59,8 +59,8 @@ function resetText() {
 }
 
 const urlParams = new URLSearchParams(window.location.search);
-const birthday_person = urlParams.get('birthday_person') || 'default';
+const happy_birthday = urlParams.get('happy_birthday') || 'default';
 
 const baseURL = 'gift.html';
-let responsiveURL = baseURL +'?birthday_person='+ birthday_person;
+let responsiveURL = baseURL +'?happy_birthday='+ happy_birthday;
 document.getElementById('giftBtnId').setAttribute('href', responsiveURL);
