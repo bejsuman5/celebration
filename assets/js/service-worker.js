@@ -13,6 +13,7 @@ self.addEventListener('push', function(event) {
 self.addEventListener('notificationclick', function(event) {
     event.notification.close();
     event.waitUntil(
-        clients.openWindow(event.notification.data.url)
+        clients.openWindow(event.notification.data.url) // Modify the URL to the desired location
+        // clients.openWindow('/') // Modify the URL to the desired location
     );
 });
