@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+
+    <link rel="shortcut icon" href="assets/images/logos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            /* width: 300px; */
+            width: 250px;
+            /* height: 300px; */
+            height: auto;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+        }
+
+        .main-section {
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.9);
+            border: 2px solid #0ff;
+        }
+
+        .image-section {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            border: 6px solid black;
+            border-radius: 10px;
+        }
+
+        .box-body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .box {
+            width: 75%;
+            height: auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box-body" id="loading-progress">
+        <div class="box p-5">
+            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
+                aria-valuemin="0" aria-valuemax="100" style="height: 2.5vh;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
+            </div>
+            <h3 class="text-center m-0 mt-3">Loading...</h3>
+        </div>
+    </div>
+
+    <div class="main-section my-5 py-5 mx-3 mx-md-5 px-0 px-md-5 bg-body rounded-4 
+        position-relative" id="content" style="display: none;">
+        <div style="font-family: 'Courier New', Courier, monospace;color: black;">
+            <h1 class="d-flex justify-content-center">Happy Birthday</h1>
+            <h2 class="d-flex justify-content-center"><i class="bi bi-cake2"></i></h2>
+            <h1 class="d-flex justify-content-center">My Dear Friend </i></h1>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide image-section">
+                    <img id="image-1" src="" onerror="this.src='assets/plugins/default/images/image-1.jpg';"
+                        alt="image-1">
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="image-2" src="" onerror="this.src='assets/plugins/default/images/image-2.jpg';"
+                        alt="image-2">
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="image-3" src="" onerror="this.src='assets/plugins/default/images/image-3.jpg';"
+                        alt="image-3">
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="image-4" src="" onerror="this.src='assets/plugins/default/images/image-4.jpg';"
+                        alt="image-4">
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="image-5" src="" onerror="this.src='assets/plugins/default/images/image-5.jpg';"
+                        alt="image-5">
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="image-6" src="" onerror="this.src='assets/plugins/default/images/image-6.jpg';"
+                        alt="image-6">
+                </div>
+                <div class="swiper-slide image-section">
+                    <img id="image-7" src="" onerror="this.src='assets/plugins/default/images/image-7.jpg';"
+                        alt="image-7">
+                </div>
+                <!-- <div class="swiper-slide image-section">
+                    <img id="image-8" src="" onerror="this.src='assets/plugins/default/images/image-8.jpg';"
+                        alt="image-8">
+                </div> -->
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="assets/js/gift-script.js"></script>
+
+    <script>
+
+        window.addEventListener('load', function () {
+            document.getElementById('loading-progress').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+
+            // ***************************************************
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(function(registration) {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                        return registration;
+                    })
+                    .catch(function(error) {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            }
+
+            setTimeout(() => {
+                Notification.requestPermission().then(perm => {
+                    if (perm === "granted") {
+                        const notifications = [
+                            { title: "Notification 1", body: "This is the body of notification 1", icon: "assets/images/icon1.png" },
+                            { title: "Notification 2", body: "This is the body of notification 2", icon: "assets/images/icon2.png" },
+                            { title: "Notification 3", body: "This is the body of notification 3", icon: "assets/images/icon3.png" },
+                            { title: "Notification 4", body: "This is the body of notification 4", icon: "assets/images/icon4.png" },
+                            { title: "Notification 5", body: "This is the body of notification 5", icon: "assets/images/icon5.png" },
+                            { title: "Notification 6", body: "This is the body of notification 6", icon: "assets/images/icon6.png" },
+                            { title: "Notification 7", body: "This is the body of notification 7", icon: "assets/images/icon7.png" },
+                            { title: "Notification 8", body: "This is the body of notification 8", icon: "assets/images/icon8.png" },
+                            { title: "Notification 9", body: "This is the body of notification 9", icon: "assets/images/icon9.png" },
+                            { title: "Notification 10", body: "This is the body of notification 10", icon: "assets/images/icon10.png" }
+                        ];
+
+                        notifications.forEach((notification, index) => {
+                            setTimeout(() => {
+                                navigator.serviceWorker.ready.then(function(registration) {
+                                    registration.showNotification(notification.title, {
+                                        body: notification.body,
+                                        icon: notification.icon
+                                    });
+                                });
+                            }, index * 5000); // 5 second gap
+                        });
+                    }
+                });
+            }, 2000); // 30 seconds delay
+            // ***************************************************
+
+
+            // COMPUTER AND ONLY MY MOBILE
+            // if ('serviceWorker' in navigator) {
+            //     navigator.serviceWorker.register('assets/js/service-worker.js')
+            //         .then(function (registration) {
+            //             console.log('Service Worker registered with scope:', registration.scope);
+            //             return registration;
+            //         })
+            //         .catch(function (error) {
+            //             console.error('Service Worker registration failed:', error);
+            //         });
+            // }
+
+            // setTimeout(() => {
+            //     Notification.requestPermission().then(perm => {
+            //         if (perm === "granted") {
+            //             const notifications = [
+            //                 { title: "শুভ জন্মদিন! 🎂🌟", body: "তোমার জীবন হোক মধুর ও সমৃদ্ধ। 🍰🎈", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🎉✨", body: "অনেক সুখ, আনন্দ, ও ভালবাসায় ভরপুর হোক। ❤️🎂", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🎉🍰", body: "তোমার দিন হোক বিশেষ ও মধুর। 🎂🌟", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🎉❤️", body: "আনন্দে কাটুক প্রতিটি মুহূর্ত। 🎂✨", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! ❤️✨", body: "তোমার সকল ইচ্ছা পূর্ণ হোক। 🎈🎉", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🌟🎁", body: "সুখী ও সুস্থ থাকো সবসময়। 🎈🎂", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🌟🎈", body: "তোমার জীবন হোক সুখময় ও সমৃদ্ধ। ❤️🎉", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🎂🎉", body: "তোমার জীবন হোক আনন্দময়। 🎁✨", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🎂🎁", body: "প্রতি মুহূর্তে খুশিতে থাকো। 🌟🍰", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🍰🌟", body: "তোমার প্রতিটি দিন হোক সুখে ভরা। 🎈❤️", icon: "assets/images/logos/suman.jpg" }
+            //             ];
+
+            //             notifications.forEach((notification, index) => {
+            //                 setTimeout(() => {
+            //                     navigator.serviceWorker.ready.then(function (registration) {
+            //                         registration.showNotification(notification.title, {
+            //                             body: notification.body,
+            //                             icon: notification.icon
+            //                         });
+            //                     });
+            //                 }, index * 6000); // 6 second gap
+            //             });
+            //         }
+            //     });
+            // }, 5000); // 5 seconds delay
+
+
+            // ONLY COMPUTER
+            // setTimeout(() => {
+            //     Notification.requestPermission().then(perm => {
+            //         if (perm === "granted") {
+            //             const notifications = [
+            //                 { title: "শুভ জন্মদিন! 🎂🌟", body: "তোমার জীবন হোক মধুর ও সমৃদ্ধ। 🍰🎈", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🎉✨", body: "অনেক সুখ, আনন্দ, ও ভালবাসায় ভরপুর হোক। ❤️🎂", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🎉🍰", body: "তোমার দিন হোক বিশেষ ও মধুর। 🎂🌟", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🎉❤️", body: "আনন্দে কাটুক প্রতিটি মুহূর্ত। 🎂✨", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! ❤️✨", body: "তোমার সকল ইচ্ছা পূর্ণ হোক। 🎈🎉", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🌟🎁", body: "সুখী ও সুস্থ থাকো সবসময়। 🎈🎂", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🌟🎈", body: "তোমার জীবন হোক সুখময় ও সমৃদ্ধ। ❤️🎉", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🎂🎉", body: "তোমার জীবন হোক আনন্দময়। 🎁✨", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🎂🎁", body: "প্রতি মুহূর্তে খুশিতে থাকো। 🌟🍰", icon: "assets/images/logos/suman.jpg" },
+            //                 { title: "শুভ জন্মদিন! 🍰🌟", body: "তোমার প্রতিটি দিন হোক সুখে ভরা। 🎈❤️", icon: "assets/images/logos/suman.jpg" }
+            //             ];
+
+            //             notifications.forEach((notification, index) => {
+            //                 setTimeout(() => {
+            //                     new Notification(notification.title, {
+            //                         body: notification.body,
+            //                         icon: notification.icon
+            //                     });
+            //                 }, index * 6000); // 6 second gap
+            //             });
+            //         }
+            //     });
+            // }, 8000); // 30 seconds delay
+
+
+
+        });
+
+        // swiper script
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            initialSlide: 3, // Start from the second image
+            loop: true, // Loop through the images
+            autoplay: {
+                delay: 2000, // Delay between slides in milliseconds
+                disableOnInteraction: false, // Enable/disable autoplay on slide interaction
+            },
+        });
+    </script>
+</body>
+
+</html>
