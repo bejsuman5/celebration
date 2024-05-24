@@ -37,10 +37,22 @@ self.addEventListener('push', function(event) {
     );
 });
 
+// self.addEventListener('notificationclick', function(event) {
+//     event.notification.close();
+//     event.waitUntil(
+//         // clients.openWindow(event.notification.data.url)
+//         clients.openWindow(event.notification.data.url || '/')
+//     );
+// });
+
 self.addEventListener('notificationclick', function(event) {
     event.notification.close();
     event.waitUntil(
-        // clients.openWindow(event.notification.data.url)
-        clients.openWindow(event.notification.data.url || '/')
+        clients.matchAll({ type: 'window' }).then(function(clientList) {
+            if (clientList.length > 0) {
+                return clientList[0].focus();
+            }
+            return clients.openWindow('/');
+        })
     );
 });
