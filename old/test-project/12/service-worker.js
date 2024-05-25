@@ -30,7 +30,7 @@ self.addEventListener('push', function(event) {
     const options = {
         body: data.body,
         icon: data.icon,
-        badge: "badge.png"
+        badge: data.badge // adding the badge property
     };
     event.waitUntil(
         self.registration.showNotification(data.title, options)
