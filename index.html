@@ -15,14 +15,32 @@
     <link rel="stylesheet" href="assets/css/media-query.css">
 
     <style>
-        .box-body {
-            margin: 0;
-            padding: 0;
+        #loading-screen {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            /* Background color of the loading screen */
+            color: #000;
+            /* Text color of the loading screen */
+            font-size: 2em;
+            z-index: 9999;
+            /* Ensure the loading screen is on top */
+            transition: opacity 1s ease-in-out, visibility 1s;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #main-content {
+            opacity: 0;
+            /* Initially hidden */
+            visibility: hidden;
+            transition: opacity 1s ease-in-out, visibility 1s;
         }
 
         .box {
@@ -37,17 +55,17 @@
 
 <body>
 
-    <div class="box-body" id="loading-progress">
+    <div class="" id="loading-screen">
         <div class="box p-5">
             <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
                 aria-valuemin="0" aria-valuemax="100" style="height: 2.5vh;">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
             </div>
             <h3 class="text-center m-0 mt-3">Loading...</h3>
         </div>
     </div>
 
-    <section class="gift-box-section" id="content" style="display: none;">
+    <section class="gift-box-section" id="main-content">
         <h1 class="fw-bold text-center my-4 gift-box-heading" id="giftBoxHeading"></h1>
 
         <div class="gift-box-container">
@@ -78,8 +96,18 @@
 
     <script>
         window.addEventListener('load', function () {
-            document.getElementById('loading-progress').style.display = 'none';
-            document.getElementById('content').style.display = 'flex';
+            // Hide the loading screen
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.visibility = 'hidden';
+
+            // Show the main content
+            const mainContent = document.getElementById('main-content');
+            mainContent.style.opacity = '1';
+            mainContent.style.visibility = 'visible';
+
+            // Allow scrolling after loading
+            document.body.style.overflow = 'auto';
         });
     </script>
     <script src="assets/js/default-script.js"></script>
