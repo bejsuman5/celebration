@@ -47,6 +47,8 @@
             border-radius: 10px;
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
+        
     </style>
 </head>
 
@@ -142,6 +144,7 @@
             // Allow scrolling after loading
             document.body.style.overflow = 'auto';
 
+            setInterval(createHeart, 600); // Create hearts every 600ms
 
             // notification
             // ***************************************************
@@ -216,6 +219,29 @@
                 disableOnInteraction: false, // Enable/disable autoplay on slide interaction
             },
         });
+
+        function createHeart() {
+            for (let i = 0; i < 3; i++) { // Create 3 hearts at a time
+                const heart = document.createElement('div');
+                heart.classList.add('small-heart');
+                heart.style.left = `${Math.random() * 100}vw`;
+
+                // Randomly assign a color to the heart
+                const colors = ['red', 'yellow', 'dodgerblue', 'deeppink'];
+                heart.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+                // Also apply the color to the pseudo-elements
+                heart.style.setProperty('--heart-color', heart.style.background);
+
+                // document.body.appendChild(heart);
+                document.getElementById('main-content').appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }
+        }
+
     </script>
 </body>
 

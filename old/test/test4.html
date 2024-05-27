@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Heart Background</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: #f0f0f0; /* Background color to better see hearts */
+        }
+
+        .small-heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            animation: fly 5s linear infinite;
+        }
+
+        .small-heart::before,
+        .small-heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 50px;
+            height: 90px;
+            background: inherit;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .small-heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('small-heart');
+            heart.style.left = `${Math.random() * 100}vw`;
+
+            // Randomly assign a color to the heart
+            const colors = ['red', 'yellow', 'dodgerblue'];
+            heart.style.background = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Also apply the color to the pseudo-elements
+            heart.style.setProperty('--heart-color', heart.style.background);
+            
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        window.addEventListener('load', () => {
+            setInterval(createHeart, 500);
+        });
+    </script>
+</body>
+
+</html>
