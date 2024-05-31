@@ -47,6 +47,8 @@
             border-radius: 10px;
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
+        
     </style>
 </head>
 
@@ -64,7 +66,7 @@
 
     <div class="main-section my-5 py-5 mx-1 mx-md-5 px-0 px-md-5 bg-body rounded-4 
         position-relative" id="main-content">
-        <div class="gift-title-body">
+        <div class="">
             <h1 class="d-flex justify-content-center gift-title-text">Happy Birthday</h1>
             <h2 class="d-flex justify-content-center gift-title">
                 <i class="bi bi-cake2 icon rounded-circle p-3 m-0 d-flex align-items-center"></i>
@@ -142,6 +144,8 @@
             // Allow scrolling after loading
             document.body.style.overflow = 'auto';
 
+            setInterval(createHeart, 600); // Create hearts every 600ms
+
             // notification
             // ***************************************************
             if ('serviceWorker' in navigator) {
@@ -191,6 +195,8 @@
             // ***************************************************
         });
 
+
+
         // swiper
         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
@@ -213,6 +219,29 @@
                 disableOnInteraction: false, // Enable/disable autoplay on slide interaction
             },
         });
+
+        function createHeart() {
+            for (let i = 0; i < 3; i++) { // Create 3 hearts at a time
+                const heart = document.createElement('div');
+                heart.classList.add('small-heart');
+                heart.style.left = `${Math.random() * 100}vw`;
+
+                // Randomly assign a color to the heart
+                const colors = ['red', 'yellow', 'dodgerblue', 'deeppink'];
+                heart.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+                // Also apply the color to the pseudo-elements
+                heart.style.setProperty('--heart-color', heart.style.background);
+
+                // document.body.appendChild(heart);
+                document.getElementById('main-content').appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }
+        }
+
     </script>
 </body>
 

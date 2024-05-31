@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: "Bad Script", cursive; */
+    background-color: wheat;
+    /* background-color: black; */
+    font-family: 'Josefin Sans';
+    /* font-style: italic; */
+    overflow: hidden;
+}
+
+.gift-box-heading {
+    color: dodgerblue;
+    position: absolute;
+    top: 150px;
+    transition: top 0.5s;
+    transition-delay: 1s;
+}
+
+.gift-box-heading.active {
+    color: dodgerblue;
+    top: -80px;
+}
+
+.gift-box-section {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: max-content;
+}
+
+.gift-box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 20%;
+}
+
+.gift-box-container.active {
+    animation: VibrationGiftBox 2s ease forwards;
+}
+
+.gift-box-body {
+    width: 280px;
+    height: 180px;
+    position: absolute;
+    background: darkorange;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    animation: BounceBox 3s ease infinite forwards;
+}
+
+.gift-box-body.active {
+    animation: none;
+}
+
+.gift-box-body::before {
+    content: '';
+    left: 120px;
+    width: 40px;
+    height: 180px;
+    position: absolute;
+    background-color: dodgerblue;
+}
+
+.gift-box-body::after {
+    content: '';
+    width: 280px;
+    height: 180px;
+    position: absolute;
+    box-shadow: inset 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.gift-box-cap {
+    z-index: 1;
+    top: -80px;
+    left: -20px;
+    width: 320px;
+    height: 80px;
+    cursor: pointer;
+    position: absolute;
+    transition: 0.5s ease;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: darkorange;
+}
+
+.gift-box-cap::before {
+    z-index: 2;
+    left: 140px;
+    width: 40px;
+    height: 80px;
+    content: '';
+    position: absolute;
+    background-color: dodgerblue;
+}
+
+.gift-box-cap::after {
+    z-index: 3;
+    top: -93px;
+    left: 130px;
+    width: 5px;
+    height: 0px;
+    content: '';
+    position: absolute;
+    border-top: 60px solid dodgerblue;
+    border-left: 0px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 60px solid dodgerblue;
+    transform: rotate(-90deg);
+}
+
+.gift-box-cap.active {
+    transition-delay: 1s;
+    transform: translateY(-320px);
+}
+
+.gift-box-shadow {
+    top: 100px;
+    left: -4px;
+    width: 380px;
+    height: 80px;
+    content: '';
+    position: relative;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    animation: GiftBoxShadowBounce 3s ease infinite forwards;
+}
+
+.gift-box-shadow.active {
+    animation: none;
+}
+
+.gift-box-text-body {
+    z-index: -1;
+    top: 0;
+    width: max-content;
+    border-radius: 15px;
+    padding: 0.5rem;
+    position: absolute;
+    text-align: center;
+    scale: 0;
+    transition: 0.5s ease;
+    transition-delay: 1.2s;
+    color: black;
+    border: 1px solid black;
+    background-color: yellow;
+}
+
+.gift-box-text-body.active {
+    transform: translateY(-350px);
+    scale: 1;
+}
+
+.gift-box-text-body.active2 {
+    top: 0;
+    transition-delay: 0.2s;
+}
+
+.gift-box-text-typing-animation {
+    display: contents;
+    font-size: 1.5rem;
+    white-space: pre-line;
+    font-family: "Tiro Bangla", serif;
+}
+
+.blink-span {
+    font-family: "Tiro Bangla", serif;
+    border-right: 2px solid black;
+    padding-right: 5px;
+    animation: blink-caret .50s step-end infinite;
+}
+
+.gift-box-countdown {
+    font-family: monospace;
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes BounceBox {
+    0% {
+        transform: translateY(-24px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-24px);
+    }
+}
+
+@keyframes GiftBoxShadowBounce {
+    0% {
+        transform: translateY(24px);
+        scale: 0.7;
+    }
+
+    50% {
+        transform: translateY(0px);
+        scale: 1;
+    }
+
+    100% {
+        transform: translateY(24px);
+        scale: 0.7;
+    }
+}
+
+@keyframes VibrationGiftBox {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    25% {
+        transform: scale(0.9s, 1.05);
+    }
+
+    50% {
+        transform: scale(1.1, 0.9);
+    }
+
+    70% {
+        transform: scale(0.9, 1.1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: black;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.gift-btn.active {
+    display: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.gift-btn-animation {
+    animation: pulse 2s infinite;
+}
