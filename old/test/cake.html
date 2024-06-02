@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Cake</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            margin: 0;
+        }
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        .cake .layer {
+            position: absolute;
+            background-color: #f08080;
+            border-radius: 50% 50% 0 0;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .cake .layer-1 {
+            width: 200px;
+            height: 100px;
+            bottom: 0;
+            z-index: 1;
+        }
+        .cake .layer-2 {
+            width: 160px;
+            height: 80px;
+            bottom: 50px;
+            left: 20px;
+            z-index: 2;
+        }
+        .cake .layer-3 {
+            width: 120px;
+            height: 60px;
+            bottom: 100px;
+            left: 40px;
+            z-index: 3;
+        }
+        .cake .candle {
+            position: absolute;
+            background-color: #ffd700;
+            width: 10px;
+            height: 40px;
+            border-radius: 5px;
+            top: -30px;
+            left: calc(50% - 5px);
+            z-index: 4;
+        }
+        .cake .flame {
+            position: absolute;
+            background-color: #ff6347;
+            width: 10px;
+            height: 20px;
+            border-radius: 50%;
+            top: -20px;
+            left: 0;
+            animation: flicker 0.5s infinite alternate;
+        }
+        @keyframes flicker {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cake">
+        <div class="layer layer-1"></div>
+        <div class="layer layer-2"></div>
+        <div class="layer layer-3"></div>
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+    </div>
+</body>
+</html>

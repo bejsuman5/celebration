@@ -31,6 +31,9 @@
     .gift-box-text-typing-animation {
         font-size: 1rem;
     }
+    #loaderProgressBarBody{
+        width: 80vw;
+    }
 }
 
 /* Custom font size for medium screens */
@@ -59,6 +62,9 @@
 
     .gift-box-text-typing-animation {
         font-size: 1rem;
+    }
+    #loaderProgressBarBody{
+        width: 50vw;
     }
 }
 
@@ -89,6 +95,9 @@
     .gift-box-text-typing-animation {
         font-size: 1.5rem;
     }
+    #loaderProgressBarBody{
+        width: 50vw;
+    }
 }
 
 /* Custom font size for extra-large screens */
@@ -117,5 +126,8 @@
 
     .gift-box-text-typing-animation {
         font-size: 1.5rem;
+    }
+    #loaderProgressBarBody{
+        width: 50vw;
     }
 }
