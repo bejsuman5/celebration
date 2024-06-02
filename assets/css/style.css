@@ -52,7 +52,8 @@ body {
 }
 
 .gift-box-body {
-    width: 280px;
+    /* width: 280px; */
+    width: 240px;
     height: 180px;
     position: absolute;
     background: darkorange;
@@ -67,7 +68,8 @@ body {
 
 .gift-box-body::before {
     content: '';
-    left: 120px;
+    /* left: 120px; */
+    left: 100px;
     width: 40px;
     height: 180px;
     position: absolute;
@@ -76,7 +78,8 @@ body {
 
 .gift-box-body::after {
     content: '';
-    width: 280px;
+    /* width: 280px; */
+    width: 240px;
     height: 180px;
     position: absolute;
     box-shadow: inset 0 10px rgba(0, 0, 0, 0.3);
@@ -85,10 +88,14 @@ body {
 
 .gift-box-cap {
     z-index: 1;
-    top: -80px;
+    /* top: -80px;
     left: -20px;
     width: 320px;
-    height: 80px;
+    height: 80px; */
+    top: -60px;
+    left: -20px;
+    width: 280px;
+    height: 60px;
     cursor: pointer;
     position: absolute;
     transition: 0.5s ease;
@@ -101,9 +108,11 @@ body {
 
 .gift-box-cap::before {
     z-index: 2;
-    left: 140px;
+    /* left: 140px; */
+    left: 120px;
     width: 40px;
-    height: 80px;
+    /* height: 80px; */
+    height: 60px;
     content: '';
     position: absolute;
     background-color: dodgerblue;
@@ -112,7 +121,8 @@ body {
 .gift-box-cap::after {
     z-index: 3;
     top: -93px;
-    left: 130px;
+    /* left: 130px; */
+    left: 110px;
     width: 5px;
     height: 0px;
     content: '';
@@ -130,10 +140,14 @@ body {
 }
 
 .gift-box-shadow {
-    top: 100px;
+    /* top: 100px;
     left: -4px;
     width: 380px;
-    height: 80px;
+    height: 80px; */
+    top: 80px;
+    left: 0px;
+    width: 310px;
+    height: 70px;
     content: '';
     position: relative;
     border-radius: 50%;
